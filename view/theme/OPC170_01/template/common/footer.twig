@@ -1,0 +1,158 @@
+<footer>
+{% if footer_top %}
+<div class="footer-top">
+{{ footer_top }}
+</div>
+{% endif %}
+<div class="footer-container">
+<div class="container">
+  <div class="row">
+    {% if footer_left %}
+    <div class="footer-column footer-left-cms col-sm-2">
+    {{ footer_left }}
+    </div>
+    {% endif %}
+    <div class="footer-right col-sm-10">
+      <div class="f-menu">
+        <a class="f-menu__link" href="/">Главная</a>
+        <a class="f-menu__link" href="#">Каталог</a>
+        <a class="f-menu__link" href="/index.php?route=information/information&amp;information_id=6">Доставка и оплата</a>
+        <a class="f-menu__link" href="/index.php?route=information/information&amp;information_id=4">О нас</a>
+        <a class="f-menu__link" href="/index.php?route=information/contact">Контакты</a>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<div class="footer-bottom">
+  <div class="container">
+  <div class="row">
+  <div class="footer-bottom-link col-sm-6">
+    <p>{{ powered }}</p>
+  </div>
+  {% if footer_bottom %}
+  <div class="footer-bottom-cms col-sm-6">
+  {{ footer_bottom }}
+  </div>
+  {% endif %}
+  </div>
+  </div>
+</div>
+</footer>
+</div>
+
+{% if module_tt_live_search_status %}
+
+      <script type="text/javascript"><!--
+        var tt_live_search = {
+          selector: '#header-search input[name=\'search\']',
+          text_no_matches: '{{ text_empty }}',
+          height: '50px'
+        }
+
+        $(document).ready(function() {
+          var html = '';
+          html += '<div class="live-search">';
+          html += ' <ul>';
+          html += ' </ul>';
+          html += '<div class="result-text"></div>';
+          html += '</div>';
+
+          //$(tt_live_search.selector).parent().closest('div').after(html);
+          $(tt_live_search.selector).after(html);
+
+          $(tt_live_search.selector).autocomplete({
+            'source': function(request, response) {
+              var filter_name = $(tt_live_search.selector).val();
+              var cat_id = 0;
+              var module_tt_live_search_min_length = '{{ module_tt_live_search_min_length|abs }}';
+              if (filter_name.length < module_tt_live_search_min_length) {
+                $('.live-search').css('display','none');
+              }
+              else{
+                var html = '';
+                html += '<li style="text-align: center;height:10px;">';
+                html += '<img class="loading" src="image/catalog/demo/banners/loading.gif" />';
+                html += '</li>';
+                $('.live-search ul').html(html);
+                $('.live-search').css('display','block');
+
+                $.ajax({
+                  url: 'index.php?route=extension/module/tt_live_search&filter_name=' +  encodeURIComponent(filter_name),
+                  dataType: 'json',
+                  success: function(result) {
+                    var products = result.products;
+                    $('.live-search ul li').remove();
+                    $('.result-text').html('');
+                    if (!$.isEmptyObject(products)) {
+                      var show_image = {{ module_tt_live_search_show_image|abs }};
+                      var show_price = {{ module_tt_live_search_show_price|abs }};
+                      var show_description = {{ module_tt_live_search_show_description|abs }};
+                      $('.result-text').html('<a href="{{ module_tt_live_search_href }}'+filter_name+'" class="view-all-results">{{ text_view_all_results|e }} ('+result.total+')</a>');
+
+                      $.each(products, function(index,product) {
+                        var html = '';
+
+                        html += '<li>';
+                        html += '<a href="' + product.url + '" title="' + product.name + '">';
+                        if(product.image && show_image){
+                          html += ' <div class="product-image col-sm-3 col-xs-4"><img alt="' + product.name + '" src="' + product.image + '"></div>';
+                        }
+                        html += '<div class="search-description col-sm-9 col-xs-8">';
+                        html += ' <div class="product-name">' + product.name ;
+                        if(show_description){
+                          html += '<p>' + product.extra_info + '</p>';
+                        }
+                        html += '</div>';
+                        if(show_price){
+                          if (product.special) {
+                            html += ' <div class="product-price"><span class="special">' + product.price + '</span><span class="price">' + product.special + '</span></div>';
+                          } else {
+                            html += ' <div class="product-price"><span class="price">' + product.price + '</span></div>';
+                          }
+                        }
+                        html += '</div>';
+                        html += '<span style="clear:both"></span>';
+                        html += '</a>';
+                        html += '</li>';
+                        $('.live-search ul').append(html);
+                      });
+                    } else {
+                      var html = '';
+                      html += '<li style="text-align: center;height:10px;">';
+                      html += tt_live_search.text_no_matches;
+                      html += '</li>';
+
+                      $('.live-search ul').html(html);
+                    }
+                    $('.live-search').css('display','block');
+                    return false;
+                  }
+                });
+              }
+            },
+            'select': function(product) {
+              $(tt_live_search.selector).val(product.name);
+            }
+          });
+
+          $(document).bind( "mouseup touchend", function(e){
+            var container = $('.live-search');
+            if (!container.is(e.target) && container.has(e.target).length === 0)
+            {
+              container.hide();
+            }
+          });
+        });
+      //--></script>
+    {% endif %}
+
+
+{% for script in scripts %}
+<script src="{{ script }}" type="text/javascript"></script>
+{% endfor %}
+<!--
+OpenCart is open source software and you are free to remove the powered by OpenCart if you want, but its generally accepted practise to make a small donation.
+Please donate via PayPal to donate@opencart.com
+//-->
+</body></html>

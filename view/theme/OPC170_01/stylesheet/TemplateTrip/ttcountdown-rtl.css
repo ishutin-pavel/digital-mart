@@ -1,0 +1,73 @@
+.tt-special-countdown {
+  float: right;
+}
+.countdown-images {
+	border-left: 1px solid #e5e5e5;
+	border-right: none;
+	float: right;
+}
+.tt-special-countdown .product-thumb .thumb-description {
+	text-align: right;
+} 
+.countdown-labele .hot {
+	left: 5px;
+	right: auto;
+}
+.special-countdown .product-thumb .thumb-description {
+  float: left;
+}
+.special-countdown .product-thumb .button-group {
+	text-align: right;
+}
+.special-countdown .product-thumb .button-group .btn-wishlist {
+  transform: translate(40px);
+	-webkit-transform: translate(40px);
+	-moz-transform: translate(40px);
+	-o-transform: translate(40px);
+	-ms-transform: translate(40px);
+}
+.special-countdown .product-thumb .button-group .btn-compare {
+  transform: translate(70px);
+  -webkit-transform: translate(70px);
+  -moz-transform: translate(70px);
+  -o-transform: translate(70px);
+  -ms-transform: translate(70px);
+}
+.special-countdown .product-thumb .button-group .btn-quickview {
+  transform: translate(110px);
+  -webkit-transform: translate(110px);
+  -moz-transform: translate(110px);
+  -o-transform: translate(110px);
+  -ms-transform: translate(110px);
+}
+.item-countdown {
+	float: right;
+}
+.item-countdown div {
+	float: right;
+}
+/*---------------column-right-left css--------------*/
+
+/*---------------column-right-left css--------------*/
+.tt-special-countdown .ttqtyprogress {
+	text-align: right;
+}
+.tt-special-countdown .progress-bar {
+	float: right;
+}
+@media (max-width: 767px) {
+	.special-countdown .product-thumb .button-group .btn-wishlist,
+	.special-countdown .product-thumb .button-group .btn-compare,
+	.special-countdown .product-thumb .button-group .btn-quickview {
+		transform: none;
+		-webkit-transform: none;
+		-moz-transform: none;
+		-o-transform: none;
+		-ms-transform: none;
+	}
+}
+@media (max-width: 480px) {
+	.item-countdown {
+		float: none;
+	}
+}

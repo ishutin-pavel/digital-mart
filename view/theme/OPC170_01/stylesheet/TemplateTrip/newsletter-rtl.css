@@ -1,0 +1,58 @@
+/* newsletter popup */
+#popup2{
+	left: 5px;
+	right: auto;
+}
+.newslatter-img {
+	float: right;
+}
+/* newsllter */
+.newletter-subscribe {
+	float: right;
+}
+#dialog-normal .newletter-title {
+	float:right;
+}
+#dialog-normal .newletter-title .tt-title::before {
+  float: right;
+}
+#dialog-normal .newleter-content{    
+	float:left;
+}
+#subscribe_email {
+	padding: 0 15px 0 120px;
+}
+#subscribe .btn {
+	left: 0;
+	right: auto;
+	border-radius: 5px 0 0 5px;
+	-moz-border-radius: 5px 0 0 5px;
+	-webkit-border-radius: 5px 0 0 5px; 
+	-khtml-border-radius: 5px 0 0 5px;
+}
+#notification-normal{
+	right: 0;
+	left: auto;
+}
+@media(max-width:991px){
+	#dialog-normal .newletter-title {
+		float: none;
+	}
+	#dialog-normal .newletter-title .tt-title::before {
+	  	float: none;
+	}
+	#dialog-normal .newleter-content {
+	  	float: none;
+	}
+}
+@media(max-width:600px){
+	#popup2 {
+		left: 0;
+		right: auto;
+	}
+}
+@media(max-width:480px){
+	#subscribe_email {
+		padding: 0 15px 0 50px;
+	}
+}
