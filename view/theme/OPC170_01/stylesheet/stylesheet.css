@@ -3988,7 +3988,7 @@ body.product-compare .table-product-image {
 .modal-dialog .modal-header .close {
 	font-size: 24px;
 	padding: 3px 5px;
-	margin-top: -5px;
+	margin-top: -24px;
 	float: right;
 }
 .modal-title {
@@ -7452,3 +7452,7 @@ opacity: 0;
 #at15s .at-label {
 	margin: 0 5px;
 }
+
+.form {}
+.form__item { margin-top: 15px; }
+.form input { width: 100%; padding: 5px 0 5px 15px; }
