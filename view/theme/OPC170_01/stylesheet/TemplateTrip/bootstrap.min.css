@@ -6101,6 +6101,7 @@ a.thumbnail:hover {
 }
 
 .alert-success {
+    padding: 10px 15px;
     color: #3c763d;
     background-color: #dff0d8;
     border-color: #d6e9c6

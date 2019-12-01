@@ -16,16 +16,46 @@
           <div class="form__item">
             <input type="tel" name="phone" placeholder="Телефон*">
           </div>
+          <div class="message"></div>
           <div class="form__item">
             <input type="submit" class="btn btn-default btn-lg" value="Отправить заявку">
           </div>
-          <div class="message"></div>
         </form>
 
       </div>
     </div>
   </div>
 </div>
+
+<script type="text/javascript"><!--
+jQuery("#f1").submit(function() {
+  var form = jQuery(this);
+  var phone = jQuery(this).find('input[name="phone"]');
+  var message = jQuery(this).find('.message');
+  if ( phone.val() == "") {
+    message.fadeIn(300).addClass('alert-danger').text('Введите Ваш телефон');
+    phone.css('border', '1px solid red').focus();
+  } else {
+    phone.css('border', '1px solid gray');
+  //yaCounter46416018.reachGoal('ORDER'); // изменить номер счётчика иначе ошибка !!!
+    jQuery.ajax({
+      type: "POST",
+      url: "index.php?route=common/footer/send_form",
+      data: form.serialize(),
+			dataType: 'json',
+			success: function(json) {
+				if(json['error']){
+          message.html(json['error']); 
+				}			
+				if(json['success']){
+          message.fadeIn(300).removeClass('alert-danger').addClass('alert-success').text('Сообщение успешно отправлено');
+				}
+			}
+    });
+  }//if
+  return false;
+});
+//--></script>
 
 <footer>
 {% if footer_top %}
