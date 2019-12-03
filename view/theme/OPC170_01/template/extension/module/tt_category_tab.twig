@@ -77,24 +77,32 @@
 				</div>
 			  {% endif %}
 			</div>
-			  <div class="button-group">
-				<button class="btn-cart{% if product.product_quantity<=0 %} {{ "disabled" }} {% endif %}" type="button" title="{% if product.product_quantity <=0 %}{{ product.product_stock }}{% else %}{{ button_cart }}{% endif %}" onclick="{% if product.product_quantity <=0 %}{% else %}cart.add('{{ product.product_id }}'){% endif %}"{% if product.product_quantity <=0 %}{{ "" }} {% endif %}>
+			  <!-- <div class="button-group"> -->
+				<!-- <button class="btn-cart{% if product.product_quantity<=0 %} {{ "disabled" }} {% endif %}" type="button" title="{% if product.product_quantity <=0 %}{{ product.product_stock }}{% else %}{{ button_cart }}{% endif %}" onclick="{% if product.product_quantity <=0 %}{% else %}cart.add('{{ product.product_id }}'){% endif %}"{% if product.product_quantity <=0 %}{{ "" }} {% endif %}> -->
+				 <!-- {% if product.product_quantity <=0 %} -->
+					<!-- {{ "<i class=\"fa fa-shopping-cart\"></i><span class=\"out of stock\">"~product.product_stock }} -->
+					<!-- {% else %} --> 
+					<!-- {{ "<i class=\"fa fa-shopping-cart\"></i> <span class=\"hidden-xs hidden-sm hidden-md\">"~button_cart }} -->
+				<!-- {% endif %} -->
+				<!-- </span></button> -->
+				<!-- <button class="btn-wishlist" title="{{ button_wishlist }}"  onclick="wishlist.add('{{ product.product_id }}');"><i class="fa fa-heart"></i> -->
+				<!-- <span title="{{ button_wishlist }}">{{ button_wishlist }}</span> -->
+				<!-- </button> -->
+				<!-- <button class="btn-compare" title="{{ button_compare }}"  onclick="compare.add('{{ product.product_id }}');"><i class="fa fa-exchange"></i> -->
+				<!-- <span title="{{ button_compare }}">{{ button_compare }}</span> -->
+				<!-- </button> -->
+				<!-- <button class="btn-quickview" type="button" title="{{ button_quickview }}" onclick="tt_quickview.ajaxView('{{ product.href }}')"><i class="fa fa-eye"></i> -->
+				<!-- <span title="{{ button_quickview }}">{{ button_quickview }}</span> -->
+		<!-- </button> -->
+			  <!-- </div> -->
+				<button class="btn btn-default btn-cart{% if product.product_quantity<=0 %} {{ "disabled" }} {% endif %}" type="button" title="{% if product.product_quantity <=0 %}{{ product.product_stock }}{% else %}{{ button_cart }}{% endif %}" onclick="{% if product.product_quantity <=0 %}{% else %}cart.add('{{ product.product_id }}'){% endif %}"{% if product.product_quantity <=0 %}{{ "" }} {% endif %}>
 				 {% if product.product_quantity <=0 %}
 					{{ "<i class=\"fa fa-shopping-cart\"></i><span class=\"out of stock\">"~product.product_stock }}
 					{% else %} 
 					{{ "<i class=\"fa fa-shopping-cart\"></i> <span class=\"hidden-xs hidden-sm hidden-md\">"~button_cart }}
 				{% endif %}
 				</span></button>
-				<button class="btn-wishlist" title="{{ button_wishlist }}"  onclick="wishlist.add('{{ product.product_id }}');"><i class="fa fa-heart"></i>
-				<span title="{{ button_wishlist }}">{{ button_wishlist }}</span>
-				</button>
-				<button class="btn-compare" title="{{ button_compare }}"  onclick="compare.add('{{ product.product_id }}');"><i class="fa fa-exchange"></i>
-				<span title="{{ button_compare }}">{{ button_compare }}</span>
-				</button>
-				<button class="btn-quickview" type="button" title="{{ button_quickview }}" onclick="tt_quickview.ajaxView('{{ product.href }}')"><i class="fa fa-eye"></i>
-				<span title="{{ button_quickview }}">{{ button_quickview }}</span>
-		</button>
-			  </div>
+        <button class="btn btn-default digitBuyOneClick" data-toggle="modal" data-target="#digitBuyOneClick">Купить в 1 клик</button>
 			</div>		
 		</div>
 	</div>

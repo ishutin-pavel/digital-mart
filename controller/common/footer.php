@@ -95,6 +95,7 @@ class ControllerCommonFooter extends Controller {
         $html = '<h3>Письмо от '.$this->request->post['name'].'</h3>';
         if($this->request->post['name'])$html .= '<p><b>Имя:</b> '.$this->request->post['name'].'</p>';
         $html .= '<p><b>Телефон:</b> '.$this->request->post['phone'].'</p>';
+        $html .= '<p><b>Продукт:</b> '.$this->request->post['product'].'</p>';
         $mail = new Mail(); 
         $mail->protocol = $this->config->get('config_mail_protocol');
         $mail->parameter = $this->config->get('config_mail_parameter');

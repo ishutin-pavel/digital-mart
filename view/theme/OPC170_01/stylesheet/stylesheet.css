@@ -4370,7 +4370,6 @@ footer .footer-column h5,
 	font: 400 14px/20px "Poppins",Helvetica,sans-serif;
     letter-spacing: 1px;
 	color: #ffffff;
-	text-transform: capitalize;
 	padding: 6px 20px;
 }
 .btn.btn-default.cnt:hover, .btn-default:hover, .btn-default:focus, .btn-default.active, .btn-default:active, .btn-default:active:focus {
@@ -4400,6 +4399,7 @@ footer .footer-column h5,
 }
 .btn-block { width: auto }
 .product-details #button-cart {
+  margin-right: 1em;
 	background: #000000;
 	border-color: #000000;
 	border-radius: 25px;
@@ -4652,7 +4652,7 @@ footer .footer-column h5,
 	color:#000;
 }
 .product-thumb .rating {
-	bottom: 75px;
+	bottom: 82px;
 	left: 0;
 	margin: 0 auto;
 	position: absolute;
@@ -7457,3 +7457,5 @@ opacity: 0;
 .form__item { margin-top: 15px; }
 .form input { width: 100%; padding: 5px 0 5px 15px; outline: none; }
 .message { margin-top: 1rem; text-align: center; }
+
+.digitBuyOneClick { margin-top: 0.5em; margin-bottom: 0.5em; }

@@ -297,6 +297,7 @@ $(".additional-images-container .customNavigation").addClass('owl-navigation');
               <input type="hidden" name="product_id" value="{{ product_id }}" />
               <button type="button" id="button-cart" data-loading-text="{{ text_loading }}" class="btn {% if stock_quantity<=0 %} {{ "btn-info" }} {% else %} btn-primary {% endif %} btn-lg btn-block" {% if stock_quantity<=0 %} {{ "disabled" }} {% endif %}>
 			  {% if stock_quantity<=0 %} {{ stock }} {% else %}{{ button_cart }} {% endif %}</button>
+              <button type="button" class="btn btn-primary btn-lg btn-block digitBuyOneClick" data-toggle="modal" data-target="#digitBuyOneClick">Купить в 1 клик</button>
             </div>
             {% if minimum > 1 %}
             <div class="alert alert-info"><i class="fa fa-info-circle"></i> {{ text_minimum }}</div>
