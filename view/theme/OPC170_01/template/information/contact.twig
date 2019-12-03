@@ -35,11 +35,11 @@
             </div>
 
             <div class="col-sm-3 store-contact">
-			<div class="location-title"><i class='fa fa-phone'></i> {{ text_telephone }} </div>
-			<div class="location-detail"> {{ telephone }} </div>
+              <div class="location-title"><i class='fa fa-phone'></i> {{ text_telephone }} </div>
+              <div class="location-detail"> {{ telephone }} </div>
               {% if fax %}
               <div class="location-title"><i class='fa fa-fax'></i> {{ text_fax }} </div>
-			  <div class="location-detail">{{ fax }} </div>
+              <div class="location-detail">{{ fax }} </div>
               {% endif %}
             </div>
 
@@ -50,8 +50,12 @@
               {% endif %}
               {% if comment %}
               <div class="location-title"><i class='fa fa-comment'></i> {{ text_comment }} </div>
-			  <div class="location-detail"> {{ comment }} </div>
+              <div class="location-detail"> {{ comment }} </div>
               {% endif %}
+            </div>
+
+            <div class="col-sm-12 store-map">
+              <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Aec896249d1614a891491aa4099e420375378ae5ac632e407805448a05df745ce&amp;source=constructor" width="100%" height="400" frameborder="0"></iframe>
             </div>
 
           </div>
