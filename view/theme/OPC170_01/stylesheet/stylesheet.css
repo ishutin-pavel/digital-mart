@@ -993,10 +993,10 @@ input[type="checkbox"] {
 .TTProduct-Tab .nav-tabs > li > a{
 	background: none;
 	border: none;
-	border-radius: 25px;
-	-moz-border-radius: 25px; 
-	-webkit-border-radius: 25px; 
-	-khtml-border-radius: 25px;
+	border-radius: 15px;
+	-moz-border-radius: 15px; 
+	-webkit-border-radius: 15px; 
+	-khtml-border-radius: 15px;
 	color: #777777;
 	font: 400 16px/20px "Poppins",Helvetica,sans-serif;
 	margin: 0;
@@ -4395,17 +4395,16 @@ footer .footer-column h5,
 	font: 400 14px/20px "Poppins",Helvetica,sans-serif;
 	letter-spacing: 1px;
 	padding: 6px 20px;
-	text-transform: capitalize;
 }
 .btn-block { width: auto }
 .product-details #button-cart {
   margin-right: 1em;
 	background: #000000;
 	border-color: #000000;
-	border-radius: 25px;
-	-moz-border-radius: 25px; 
-	-webkit-border-radius: 25px; 
-	-khtml-border-radius: 25px;
+	border-radius: 10px;
+	-moz-border-radius: 10px; 
+	-webkit-border-radius: 10px; 
+	-khtml-border-radius: 10px;
 	color: #ffffff;
 	float: left;
 	font-family: "poppins",Helvetica,sans-serif;
@@ -7459,3 +7458,5 @@ opacity: 0;
 .message { margin-top: 1rem; text-align: center; }
 
 .digitBuyOneClick { margin-top: 0.5em; margin-bottom: 0.5em; }
+.product-block .digitBuyOneClick { margin-top: 0; margin-bottom: 0; line-height: 27px; background: #ed1e3c; border: 1px solid #ed1e3c; }
+.product-block .digitBuyOneClick:hover { background: #000000; border-color: #000000; }
